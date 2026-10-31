@@ -54,6 +54,10 @@ class _SignupScreenState extends State<SignupScreen> {
           .hasMatch(pass)
           ? null
           : 'كلمة المرور لازم تكون 8 أحرف على الأقل، وتحتوي على حرف كبير، وحرف صغير، ورقم، ورمز (@\$!%*?&).';
+      _confirmErr= RegExp(r'^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$')
+          .hasMatch(pass)
+          ? null
+          : 'كلمة المرور لازم تكون 8 أحرف على الأقل، وتحتوي على حرف كبير، وحرف صغير، ورقم، ورمز (@\$!%*?&).';
       _confirmErr = _confirm.text == pass ? null : 'كلمتا المرور غير متطابقتين.';
       _termsErr = _terms ? null : 'يجب الموافقة على الشروط والأحكام لإنشاء الحساب.';
     });
